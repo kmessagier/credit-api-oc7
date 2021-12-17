@@ -1,26 +1,26 @@
-
-from flask import Flask, jsonify, request, render_template, json
+from flask import Flask, jsonify
 import numpy as np
 import pickle
 import pandas as pd
-from lime import lime_tabular
 import lightgbm
 
 # loading the trained model
-pickle_in = open('C:/Users/KamKam/OneDrive/Documents/FORMATIONS/DATA SCIENTIST-EXPERT EN BIG DATA/OPENCLASSROOMS/07 - PROJET 7/lgbm.pkl', 'rb')
+
+
+pickle_in = open('lgbm.pkl', 'rb')
 lgbm = pickle.load(pickle_in)
 print('Le modèle a été importé')
 
 # loading data
-data_client = pd.read_csv('data/mini_data_test.csv')
-data_client_without_id = pd.read_csv('data/data_test_mini_without_id.csv')
+data_client = pd.read_csv('mini_data_test.csv')
+data_client_without_id = pd.read_csv('data_test_mini_without_id.csv')
 
-
-print('Les données ont été importées')
 
 app = Flask(__name__)
 
-
+@app.route('/api/client2')
+def client2():
+    return '<h1>TEST API FONCTIONNELLE</h1>'
 
 @app.route('/api/client/<id_client>')
 def client(id_client):
@@ -44,9 +44,4 @@ def client(id_client):
     dico["proba1"] = str(np.round(y_proba[0][1], 2))
 
     return jsonify(dico)
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
-
 
