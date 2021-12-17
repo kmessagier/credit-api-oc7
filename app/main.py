@@ -6,6 +6,19 @@ import pandas as pd
 import lightgbm
 
 
+# loading the trained model
+pickle_in = open('C:/Users/KamKam/OneDrive/Documents/FORMATIONS/DATA SCIENTIST-EXPERT EN BIG DATA/OPENCLASSROOMS/07 - PROJET 7/lgbm.pkl', 'rb')
+lgbm = pickle.load(pickle_in)
+print('Le modèle a été importé')
+
+# loading data
+data_client = pd.read_csv('data/mini_data_test.csv')
+data_client_without_id = pd.read_csv('data/data_test_mini_without_id.csv')
+
+
+print('Les données ont été importées')
+
+
 app = Flask(__name__)
  
 @app.route('/api/clients')
