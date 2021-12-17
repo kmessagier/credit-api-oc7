@@ -27,7 +27,7 @@ def client(id_client):
     id_client = float(id_client)
 
     # Nouvelle donnée à interpréter
-    index de la ligne du client à partir de son identifiant SK_ID_CURR
+    #index de la ligne du client à partir de son identifiant SK_ID_CURR
     index = data_client.index[data_client['SK_ID_CURR'] == id_client].tolist()[0]
 
 
