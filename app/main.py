@@ -5,8 +5,8 @@ import pandas as pd
 import lightgbm
 
 # loading the trained model
-pickle_in = open('C:/Users/KamKam/OneDrive/Documents/FORMATIONS/DATA SCIENTIST-EXPERT EN BIG DATA/OPENCLASSROOMS/07 - PROJET 7/lgbm.pkl', 'rb')
-lgbm = pickle.load(pickle_in)
+
+lgbm = pickle.load(open('lgbm.pkl', 'rb'))
 
 
 app = Flask(__name__)
