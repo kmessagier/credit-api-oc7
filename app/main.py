@@ -7,6 +7,8 @@ import lightgbm
 
 
 # loading the trained model
+
+
 pickle_in = open('../modele/lgbm.pkl', 'rb')
 lgbm = pickle.load(pickle_in)
 print('Le modèle a été importé')
