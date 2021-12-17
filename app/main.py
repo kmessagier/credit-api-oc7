@@ -4,9 +4,16 @@ import numpy as np
 import pandas as pd
 import lightgbm
 
-# loading the trained model
 
-lgbm = pickle.load(open('lgbm.pkl', 'rb'))
+# loading the trained model
+pickle_in = open('app/lgbm.pkl', 'rb')
+lgbm = pickle.load(pickle_in)
+print('Le modèle a été importé')
+
+# loading data
+data_client = pd.read_csv('app/mini_data_test.csv')
+data_client_without_id = pd.read_csv('app/data_test_mini_without_id.csv')
+
 
 
 app = Flask(__name__)
