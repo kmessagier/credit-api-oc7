@@ -19,7 +19,9 @@ print('Les données ont été importées')
 
 app = Flask(__name__)
 
-
+@app.route('/api/client2')
+def client2():
+    return 'Tu vois que ça marche ;-)'
 
 @app.route('/api/client/<id_client>')
 def client(id_client):
