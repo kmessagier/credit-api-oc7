@@ -6,11 +6,13 @@ import pandas as pd
 import lightgbm
 
 
-app = Flask(__name__)
-
 # loading the trained model
 pickle_in = open('lgbm.pkl', 'rb')
 lgbm = pickle.load(pickle_in)
+
+
+app = Flask(__name__)
+
 
 
 @app.route('/api/client2')
