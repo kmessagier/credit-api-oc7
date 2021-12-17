@@ -7,7 +7,7 @@ import lightgbm
 
 
 # loading the trained model
-pickle_in = open('C:/Users/KamKam/OneDrive/Documents/FORMATIONS/DATA SCIENTIST-EXPERT EN BIG DATA/OPENCLASSROOMS/07 - PROJET 7/lgbm.pkl', 'rb')
+pickle_in = open('modele/lgbm.pkl', 'rb')
 lgbm = pickle.load(pickle_in)
 print('Le modèle a été importé')
 
