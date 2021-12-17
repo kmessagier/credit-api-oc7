@@ -6,19 +6,12 @@ import pandas as pd
 import lightgbm
 
 
-# loading the trained model
-pickle_in = open('modele/lgbm.pkl', 'rb')
-lgbm = pickle.load(pickle_in)
-print('Le modèle a été importé')
-
-# loading data
-data_client = pd.read_csv('data/mini_data_test.csv')
-data_client_without_id = pd.read_csv('data/data_test_mini_without_id.csv')
-
-
-print('Les données ont été importées')
-
 app = Flask(__name__)
+ 
+@app.route('/api/clients')
+def index():
+  return '<h1>15</h1>'
+
 
 @app.route('/api/client/<id_client>')
 def client(id_client):
