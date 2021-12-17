@@ -1,12 +1,12 @@
-app = Flask(__name__)
 
 from flask import Flask, jsonify
 import numpy as np
-import pickle
+
 import pandas as pd
 import lightgbm
 
 
+app = Flask(__name__)
 
 
 
