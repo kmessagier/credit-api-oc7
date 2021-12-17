@@ -18,11 +18,15 @@ data_client = pd.read_csv('../data/mini_data_test.csv')
 data_client_without_id = pd.read_csv('../data/data_test_mini_without_id.csv')
 
 
-print('Les données ont été importées')
-
-
 app = Flask(__name__)
- 
+
+import os
+
+if(os.path.exists('./mini_data_test.csv')) :
+      print('file exist')
+else:
+      print('file not exist')
+  
 @app.route('/api/clients')
 def index():
   return '<h1>15</h1>'
