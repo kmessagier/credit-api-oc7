@@ -1,1 +1,1 @@
-web: gunicorn run:app 
+web: gunicorn run:app --keep-alive 5
