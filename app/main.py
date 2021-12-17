@@ -13,6 +13,7 @@ print('Le modèle a été importé')
 # loading data
 data_client = pd.read_csv('mini_data_test.csv')
 data_client_without_id = pd.read_csv('data_test_mini_without_id.csv')
+print('Les données ont été importées')
 
 
 
