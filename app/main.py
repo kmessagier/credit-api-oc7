@@ -38,20 +38,23 @@ def client(id_client):
 
     # Nouvelle donnée à interpréter
    # index de la ligne du client à partir de son identifiant SK_ID_CURR
+    print('Détermination de l\'index du client')
     index = data_client.index[data_client['SK_ID_CURR'] == id_client].tolist()[0]
 
 
 
     # Calcul des probabilités d'appartenance aux classes 0 et 1
+    print('Calcul des probabilités')
     y_proba = lgbm.predict_proba(data_client_without_id.iloc[index,1:].array.reshape(1, -1))
 
 
 
-
+    print('Création dictionnaire dico')
     dico = {}
     dico["proba0"] = str(np.round(y_proba[0][0], 2))
     dico["proba1"] = str(np.round(y_proba[0][1], 2))
 
+    print('conversion de dictionnaire python en format JSON')
     return jsonify(dico)
 
 
