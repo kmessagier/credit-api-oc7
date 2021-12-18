@@ -10,7 +10,7 @@ import lightgbm
 
 
 try:
-      pickle_in = open('lgbm.pkl', 'rb')
+      pickle_in = open('app/lgbm.pkl', 'rb')
       lgbm = pickle.load(pickle_in)
 except Exception as e :
       print('ERROR :' +str(e))
@@ -19,8 +19,8 @@ except Exception as e :
 print('Le modèle a été importé')
 
 # loading data
-data_client = pd.read_csv('mini_data_test.csv')
-data_client_without_id = pd.read_csv('data_test_mini_without_id.csv')
+data_client = pd.read_csv('app/mini_data_test.csv')
+data_client_without_id = pd.read_csv('app/data_test_mini_without_id.csv')
 print('Les données ont été importées')
 
 
