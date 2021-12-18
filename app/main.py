@@ -45,7 +45,7 @@ def client(id_client):
 
     # Calcul des probabilités d'appartenance aux classes 0 et 1
     print('Calcul des probabilités')
-    y_proba = lgbm.predict_proba(data_client_without_id.iloc[index,1:].array.reshape(1, -1))
+    y_proba = lgbm.predict_proba(data_client_without_id.iloc[index,1:].values.reshape(1, -1))
 
 
 
