@@ -3,7 +3,6 @@ from flask import Flask, jsonify, request, render_template, json
 import numpy as np
 import pickle
 import pandas as pd
-from lime import lime_tabular
 import lightgbm
 
 # loading the trained model
