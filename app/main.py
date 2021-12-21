@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 
 @app.route('/api/client2')
-def client():
+def client2():
     print("API FONCTIONNELLE")
 
 @app.route('/api/client/<id_client>')
