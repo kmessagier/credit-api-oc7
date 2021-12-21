@@ -34,7 +34,7 @@ def client(id_client):
     #index = data_client.index[data_client['SK_ID_CURR'] == id_client].tolist()[0]
     list_xtest = data_client.columns.tolist()  # Création d'une liste récupérant les features
     # st.write(list_xtest)
-    list_xtest_without_id = [e for e in list_xtest if e not in 'SK_ID_CURR']  # Modification de la liste sans SK_ID_CURR pour lancer la future prédiction
+    list_xtest_without_id = [e for e in list_xtest if e not in ['Unnamed: 0','SK_ID_CURR']]  # Modification de la liste sans SK_ID_CURR pour lancer la future prédiction
 
 
     # Calcul des probabilités d'appartenance aux classes 0 et 1
