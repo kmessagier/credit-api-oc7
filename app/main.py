@@ -1,12 +1,13 @@
 
-from flask import Flask, jsonify, request, render_template, json
+from flask import Flask, jsonify
 import numpy as np
 import pickle
 import pandas as pd
-import lightgbm
+
+
 
 # loading the trained model
-pickle_in = open('C:/Users/KamKam/OneDrive/Documents/FORMATIONS/DATA SCIENTIST-EXPERT EN BIG DATA/OPENCLASSROOMS/07 - PROJET 7/lgbm.pkl', 'rb')
+pickle_in = open('data/lgbm.pkl', 'rb')
 lgbm = pickle.load(pickle_in)
 print('Le modèle a été importé')
 
@@ -33,7 +34,7 @@ def client(id_client):
 
 
     # Calcul des probabilités d'appartenance aux classes 0 et 1
-    y_proba = lgbm.predict_proba(data_client_without_id.iloc[index,:130].array.reshape(1, -1))
+    y_proba = lgbm.predict_proba(data_client_without_id.iloc[index, :130].array.reshape(1, -1))
 
 
 
