@@ -22,7 +22,8 @@ app = Flask(__name__)
 
 @app.route('/api/client2')
 def client2():
-    print("API FONCTIONNELLE")
+    return"API FONCTIONNELLE"
+    
 
 @app.route('/api/client/<id_client>')
 def client(id_client):
@@ -40,7 +41,7 @@ def client(id_client):
     # Calcul des probabilités d'appartenance aux classes 0 et 1
     #y_proba = lgbm.predict_proba(data_client_without_id.iloc[index, 1:].array.reshape(1, -1))
 
-    y_proba = lgbm.predict_proba(data_client.loc[data_client['SK_ID_CURR']==id_client, list_xtest_without_id:].values.reshape(1, -1))
+    y_proba = lgbm.predict_proba(data_client.loc[data_client['SK_ID_CURR']==id_client, list_xtest_without_id].values.reshape(1, -1))
 
 
     dico = {}
